@@ -1,12 +1,10 @@
-let num = 266219;
-let sum = 1;
+const num = 266219;
+let numString = num.toString().split('');
 
-num = num.toString().split('');
+let composition = (numString.reduce(function(sum, current) {
+  return sum * (current * 1);
+}, 1));
+console.log(composition);
 
-num.forEach(function(item){
-  sum *= item;
-});
-console.log(sum);
-
-sum = sum ** 3;
-console.log(sum.toString().substring(0, 2));
+composition = composition ** 3;
+console.log(composition .toString().substr(0, 2));
