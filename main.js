@@ -1,4 +1,11 @@
-let money = 49, income = 70, addExpenses = 10, deposit = 100, mission = 100, period = 5;
+let money = 15000,
+income = 'фриланс',
+addExpenses = 'интернет, проезд, еда',
+deposit = true,
+mission = 30000,
+period = 5;
 
-alert("Переменные добавлены!");
-console.log("Привет, куратор :D");
+console.log(typeof(money));
+console.log(typeof(income));
+console.log(typeof(deposit));
+
