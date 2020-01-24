@@ -11,4 +11,4 @@ for(let i = 0; i < size; i++) {
 console.log(composition);
 
 composition = composition ** 3;
-
+console.log(String(composition).substring(0, 2));
