@@ -1,14 +1,12 @@
 let num = 266219;
-let size = 0;
-let composition = 1;
+let sum = 1;
 
-size = String(num).length;
+num = num.toString().split('');
 
-for(let i = 0; i < size; i++) {
-  composition *= (num % 10);
-  num = Math.trunc(num / 10);
-}
-console.log(composition);
+num.forEach(function(item){
+  sum *= item;
+});
+console.log(sum);
 
-composition = composition ** 3;
-console.log(String(composition).substring(0, 2));
+sum = sum ** 3;
+console.log(sum.toString().substring(0, 2));
