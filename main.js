@@ -8,3 +8,5 @@ console.log(composition);
 
 composition = composition ** 3;
 console.log(composition .toString().substr(0, 2));
+
+//console.log(String(((num.toString().split('')).reduce(function(sum, current) { return sum * (current * 1);}, 1)) ** 3).substr(0, 2));
