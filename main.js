@@ -30,3 +30,13 @@ console.log('Цель будет достигнута за: ' + Math.ceil(missio
 
 let budgetDay = Math.floor(budgetMonth / 30);
 console.log(`Бюджет на день: ${budgetDay}`);
+
+if (budgetDay >= 1200) {
+  console.log('Высокий уровень дохода');
+} else if (600 < budgetDay < 1200) {
+  console.log('У вас средний уровень дохода');
+} else if (budgetDay <= 600) {
+  console.log('К сожалению, у вас низкий уровень дохода');
+} else if (budgetDay <= 0) {
+  console.log('Что-то пошло не так');
+}
