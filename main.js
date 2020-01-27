@@ -21,3 +21,5 @@ switch(lang) {
 
 console.log(lang === 'ru' ? arr[0] : arr[1]);
 
+let namePerson = prompt('Ваше имя');
+console.log(namePerson === 'Артём' ? 'Директор' : namePerson === 'Максим' ? 'Преподаватель' : 'Студент');
