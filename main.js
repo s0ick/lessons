@@ -1,29 +1,16 @@
 'use strict';
 
 let message = prompt('Введите message:');
-let newMessage = '';
 
-let SearchError = function(strFix) {
-  console.log(strFix+ ' -1');
-  if (!isNaN(strFix)) {
-    return 0;
-  } else {
-    console.log(strFix + ' -2');
-    return newMessage;
+const getInput = function(str){
+  while(str !== String(str.match(/[а-яА-ЯЁё0-9a-zA-z\s]/g)).replace(/,/g, '')) {
+    alert('Что-то пошло не так...');
+    str = prompt('Введите message:');
   }
-};
-
-let getMessage = function(str){
-  if(SearchError(str) === 0){
-    alert('Возникла ошибка, попробуйту снова.');
-    newMessage = prompt('Введите message:');
-    SearchError(newMessage);
-  } else {
-    str = newMessage;
-    // console.log(str + ' -3');
-    // //str = str.trim();
-    return str;
+  str = str.trim();
+  if(str.length > 30) {
+    str = str.substr(0, 30) + '...';
   }
+  return str;
 };
-console.log(newMessage);
-console.log(getMessage(message));
+console.log(getInput(message));
