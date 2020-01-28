@@ -3,7 +3,7 @@
 const message = prompt('Введите message:');
 
 const getInput = function(str){
-  console.log(typeof str);
+  console.log(typeof str === 'string');
   while(!isNaN(str)) {
     alert('Что-то пошло не так...');
     str = prompt('Введите message:');
