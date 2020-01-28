@@ -1,15 +1,16 @@
 'use strict';
 
-let message = prompt('Введите message:');
+const message = prompt('Введите message:');
 
 const getInput = function(str){
+  console.log(typeof str);
   while(!isNaN(str)) {
     alert('Что-то пошло не так...');
     str = prompt('Введите message:');
   }
   str = str.trim();
   if(str.length > 30) {
-    str = str.substr(0, 30) + '...';
+    str = str.slice(0, 30) + '...';
   }
   return str;
 };
