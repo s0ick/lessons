@@ -13,7 +13,7 @@ let expenses1 = prompt('Введите обязательную статью р�
     expenses2 = prompt('Введите обязательную статью расходов?', 'ЖКХ'),
     amount2 = +prompt('Во сколько это обойдется?');
 
-let showTypeOf = function(data) {
+const showTypeOf = function(data) {
   console.log(data, typeof data);
 };
 showTypeOf(money);
@@ -22,18 +22,18 @@ showTypeOf(deposit);
 
 console.log(addExpenses.toLowerCase().split(', '));
 
-let getExpensesMonth = function(cost1, cost2) {
+const getExpensesMonth = function(cost1, cost2) {
   return cost1 + cost2;
 };
 console.log('Расходы за месяц: ' + getExpensesMonth(amount1, amount2));
 
-let getAccumulatedMonth = function() {
+const getAccumulatedMonth = function() {
   return +money - getExpensesMonth(amount1, amount2);
 };
 
 let accumulatedMonth = getAccumulatedMonth();
 
-let getTargetMonth = function(target, costs) {
+const getTargetMonth = function(target, costs) {
   return Math.ceil(target / costs);
 };
 
@@ -42,7 +42,7 @@ console.log('Цель будет достигнута за: ' + getTargetMonth(m
 let budgetDay = Math.floor(accumulatedMonth / 30);
 console.log(`Бюджет на день: ${budgetDay}`);
 
-let getStatusIncome = function() {
+const getStatusIncome = function() {
   if (budgetDay >= 1200) {
     return ('Высокий уровень дохода');
   } else if (600 < budgetDay && budgetDay < 1200) {
