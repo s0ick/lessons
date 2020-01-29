@@ -2,7 +2,7 @@
 
 const arr = ['564', '220', '1892', '432', '742', '113', '4895'];
 
-let searchArray = arr.filter(function(item){
+const searchArray = arr.filter(function(item){
   return item[0] === '2' || item[0] === '4';
 });
 console.log(searchArray);
