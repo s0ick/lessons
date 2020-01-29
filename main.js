@@ -8,7 +8,7 @@ const money = prompt('Ваш месячный доход?'),
       mission = 30000,
       period = 5;
 
-let expenses1 = prompt('Введите обязательную статью расходов?', 'Лицензионное ПО'),
+const expenses1 = prompt('Введите обязательную статью расходов?', 'Лицензионное ПО'),
     amount1 = +prompt('Во сколько это обойдется?'),
     expenses2 = prompt('Введите обязательную статью расходов?', 'ЖКХ'),
     amount2 = +prompt('Во сколько это обойдется?');
@@ -31,7 +31,7 @@ const getAccumulatedMonth = function() {
   return +money - getExpensesMonth(amount1, amount2);
 };
 
-let accumulatedMonth = getAccumulatedMonth();
+const accumulatedMonth = getAccumulatedMonth();
 
 const getTargetMonth = function(target, costs) {
   return Math.ceil(target / costs);
@@ -39,7 +39,7 @@ const getTargetMonth = function(target, costs) {
 
 console.log('Цель будет достигнута за: ' + getTargetMonth(mission, accumulatedMonth) + ' месяца/ев');
 
-let budgetDay = Math.floor(accumulatedMonth / 30);
+const budgetDay = Math.floor(accumulatedMonth / 30);
 console.log(`Бюджет на день: ${budgetDay}`);
 
 const getStatusIncome = function() {
