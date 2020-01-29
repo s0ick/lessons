@@ -30,16 +30,16 @@ showTypeOf(deposit);
 
 console.log(addExpenses.toLowerCase().split(', '));
 
+let temp;
 const getExpensesMonth = function() {
   let sum = 0 ;
-  let temp;
   for(let i = 0; i < 2; i++){
     expenses[i] = prompt('Введите обязательную статью расходов:');
     do {
-      temp = 0;
-      temp = +prompt('Во сколько это обойдется?');
+      temp = null;
+      temp = prompt('Во сколько это обойдется?');
     } while(!isNumber(temp));
-    sum += temp;
+    sum += +temp;
   }
   return sum;
 };
