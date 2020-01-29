@@ -9,3 +9,14 @@ for(let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
   }
 }
+
+for (let i = 2; i <= 100; i++) {
+  let count = 0;
+  for (let j = 1; j <= i; j++) {
+    if (i % j) continue;
+    count += 1;
+  }
+  if (count === 2) console.log(`Делители числа ${i}: 1 и ${i}`);
+}
+
+  
