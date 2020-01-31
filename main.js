@@ -18,7 +18,7 @@ let appData = {
   addIncome: [],
   expenses: {},
   addExpenses: [],
-  depist: false,
+  deposit: false,
   mission: 50000,
   period: 3,
   budget: +money,
@@ -80,3 +80,13 @@ let appData = {
 appData.asking();
 console.log(appData.getTargetMonth());
 console.log(appData.getStatusIncome());
+
+console.log('Наша программа включает в себя данные:');
+delete appData.getBudget;
+delete appData.getExpensesMonth;
+delete appData.getStatusIncome;
+delete appData.getTargetMonth;
+delete appData.asking;
+for(let key in appData) {
+  console.log(`Свойство: ${key} - Значение: ${appData[key]}`);
+}
