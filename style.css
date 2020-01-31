@@ -1,5 +1,6 @@
 .back {
-  background-image: linear-gradient(88deg,#2f647a, #141b1d);
+  background-image: linear-gradient(-50deg,#2f647a, #141b1d);
+  height: 100vh;
 }
 .block {
   display: flex;
@@ -20,4 +21,8 @@
   font-size: 20px;
   font-family: monospace;
   margin-left: 15px;
+}
+.bold {
+  font-weight: 700;
+  color: #fff;
 }
