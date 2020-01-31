@@ -82,11 +82,6 @@ console.log(appData.getTargetMonth());
 console.log(appData.getStatusIncome());
 
 console.log('Наша программа включает в себя данные:');
-delete appData.getBudget;
-delete appData.getExpensesMonth;
-delete appData.getStatusIncome;
-delete appData.getTargetMonth;
-delete appData.asking;
 for(let key in appData) {
   console.log(`Свойство: ${key} - Значение: ${appData[key]}`);
 }
