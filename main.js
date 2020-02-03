@@ -34,7 +34,7 @@ let appData = {
     if(confirm('Есть ли у вас дополнительный заработок?')){
       do {
         itemIncome = prompt('Какой у вас доп заработок?', 'Фриланс');
-      } while(isNumber(itemIncome) || itemIncome.trim() === '');
+      } while(isNumber(itemIncome) || itemIncome === null || itemIncome.trim() === '');
       do {
         cashIncome = prompt('Какой у вас доход от этого?', 10000);
       } while(!isNumber(cashIncome));
