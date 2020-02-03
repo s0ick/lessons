@@ -31,7 +31,7 @@ let appData = {
   asking: function() {
     let itemIncome,
         cashIncome;
-    if(confirm('Есть ли у вас дпоплнительный заработок?')){
+    if(confirm('Есть ли у вас дополнительный заработок?')){
       do {
         itemIncome = prompt('Какой у вас доп заработок?', 'Фриланс');
       } while(isNumber(itemIncome));
@@ -43,8 +43,11 @@ let appData = {
 
     let amount = '',
         addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
-        'Еда, проезд, комуналка');
-        appData.addExpenses = addExpenses.toLowerCase().split(', '); 
+        'eда, проезд, комуналка');
+        appData.addExpenses = addExpenses.split(', ').map(function(item) {
+          return (item[0].toUpperCase() + item.slice(1).split(','));
+        });
+
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
     for(let i = 0; i < 2; i++){
