@@ -6,15 +6,16 @@ let day = new Date();
 week.forEach(function(item, index){
 
   let p = document.createElement('p');
-  p.id = index;
-  document.body.appendChild(p);
-  let elem = document.getElementById(index);
-  elem.textContent = item;
-  elem.classList.add('list');
+  p.classList.add('list');
+  p.textContent = item;
   
   if (index === (day.getDay() - 1)) {
-    elem.classList.add('bold');
+    p.classList.add('bold');
+    if(item === 'Суббота' || item === 'Воскресенье'){
+      p.classList.add('italic');
+    }
   } else if(item === 'Суббота' || item === 'Воскресенье'){
-    elem.classList.add('italic');
+    p.classList.add('italic');
   }
+  document.body.appendChild(p);
 });
