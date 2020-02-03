@@ -46,7 +46,7 @@ let appData = {
         do {
           addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
           'eда, проезд, комуналка');
-        } while(isNumber(addExpenses) || addExpenses.trim() === '');
+        } while(isNumber(addExpenses) || addExpenses === null || addExpenses.trim() === '');
         appData.addExpenses = addExpenses.split(', ').map(function(item) {
           return (item[0].toUpperCase() + item.slice(1).split(','));
         });
@@ -56,7 +56,7 @@ let appData = {
     for(let i = 0; i < 2; i++){
       do {
         amount = prompt('Введите обязательную статью расходов:');
-      } while(isNumber(amount) || amount.trim() === '');
+      } while(isNumber(amount) || amount === null || amount.trim() === '');
       do {
         appData.expenses[amount] = prompt('Во сколько это обойдется?');
       } while(!isNumber(appData.expenses[amount]));
