@@ -4,11 +4,17 @@ const week = ['Понедельник', 'Вторник', 'Среда', 'Чет�
 let day = new Date();
 
 week.forEach(function(item, index){
+
+  let p = document.createElement('p');
+  p.id = index;
+  document.body.appendChild(p);
+  let elem = document.getElementById(index);
+  elem.textContent = item;
+  elem.classList.add('list');
+  
   if (index === (day.getDay() - 1)) {
-    document.write(`<p class="list bold"><b>${item}</b></p>`);
+    elem.classList.add('bold');
   } else if(item === 'Суббота' || item === 'Воскресенье'){
-    document.write(`<p class="list"><i>${item}</i></p>`);
-  }  else {
-    document.write(`<p class="list">${item}</p>`);
+    elem.classList.add('italic');
   }
 });
