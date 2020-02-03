@@ -34,7 +34,7 @@ let appData = {
     if(confirm('Есть ли у вас дополнительный заработок?')){
       do {
         itemIncome = prompt('Какой у вас доп заработок?', 'Фриланс');
-      } while(isNumber(itemIncome));
+      } while(isNumber(itemIncome) || itemIncome.trim() === '');
       do {
         cashIncome = prompt('Какой у вас доход от этого?', 10000);
       } while(!isNumber(cashIncome));
@@ -42,8 +42,11 @@ let appData = {
     }
 
     let amount = '',
-        addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
-        'eда, проезд, комуналка');
+        addExpenses;
+        do {
+          addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
+          'eда, проезд, комуналка');
+        } while(isNumber(addExpenses) || addExpenses.trim() === '');
         appData.addExpenses = addExpenses.split(', ').map(function(item) {
           return (item[0].toUpperCase() + item.slice(1).split(','));
         });
@@ -51,7 +54,9 @@ let appData = {
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
     for(let i = 0; i < 2; i++){
-      amount = prompt('Введите обязательную статью расходов:');
+      do {
+        amount = prompt('Введите обязательную статью расходов:');
+      } while(isNumber(amount) || amount.trim() === '');
       do {
         appData.expenses[amount] = prompt('Во сколько это обойдется?');
       } while(!isNumber(appData.expenses[amount]));
