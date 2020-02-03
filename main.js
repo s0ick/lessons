@@ -27,18 +27,17 @@ let appData = {
   expensesMonth: 0,
 
   asking: function() {
-    let name = '',
+    let amount = '',
         addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 
         'Еда, проезд, комуналка');
         appData.addExpenses = addExpenses.toLowerCase().split(', '); 
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
 
     for(let i = 0; i < 2; i++){
-      name = prompt('Введите обязательную статью расходов:');
+      amount = prompt('Введите обязательную статью расходов:');
       do {
-        appData.expenses[name] = null;
-        appData.expenses[name] = prompt('Во сколько это обойдется?');
-      } while(!isNumber(appData.expenses[name]));
+        appData.expenses[amount] = prompt('Во сколько это обойдется?');
+      } while(!isNumber(appData.expenses[amount]));
     }    
   },
 
