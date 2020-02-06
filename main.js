@@ -24,7 +24,7 @@ function formatDateOne(date) {
   str = str + ' ' + date.getFullYear() + ' года, ';
   if(date.getHours() === 1 || date.getHours() === 21) {
     str = str + date.getHours() + ' час';
-  } else if((date.getHours() >= 2 && date.getHours() <= 4) || date.getHours() === 22 ||  date.getHours() === 23) {
+  } else if((date.getHours() >= 2 && date.getHours() <= 4) || date.getHours() === 22 || date.getHours() === 23) {
     str = str + date.getHours() + ' часа';
   } else if(date.getHours() >= 5 && date.getHours() <= 20) {
     str = str + date.getHours() + ' часов';
