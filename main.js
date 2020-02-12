@@ -1,36 +1,44 @@
 'use strict';
 
-function DomElement(selector, height, width, bg, fontSize, text){
-  this.selector = selector;
+function DomElement(height, width, bg){
   this.height = height;
   this.width = width;
   this.bg = bg;
-  this.fontSize = fontSize;
-  this.text = text;
+  this.position = 'absolute';
 }
 DomElement.prototype.create = function(){
-  if(this.selector.substring(0, 1) === '#'){
-    let p = document.createElement('p');
-    p.id = this.selector.substring(1);
-    p.style.cssText =`height: ${this.height}; 
+  let div = document.createElement('div');
+  div.style.cssText =`height: ${this.height}; 
                       width: ${this.width};
                       background: ${this.bg};
-                      font-size: ${this.fontSize};`;
-    p.textContent = this.text;
-    document.body.append(p);
-  } else {
-    let div = document.createElement('div');
-    div.classList.add(this.selector.substring(1));
-    div.style.cssText =`height: ${this.height}; 
-                        width: ${this.width};
-                        background: ${this.bg};
-                        font-size: ${this.fontSize};`;
-    div.textContent = this.text;
-    document.body.append(div);
-  }
+                      position: ${this.position};`;
+  div.id = 'square';                    
+  document.body.append(div);
 };
-
-let block = new DomElement('.div', '30px', '80px', '#b4a839', '24px', 'Я блок!');
-let paragraph = new DomElement('#p', '30px', '130px', '#25aa61', '24px', 'Я параграф!');
+ 
+let block = new DomElement('100px', '100px', '#b4a839');
 block.create();
-paragraph.create();
+let div = document.querySelector('#square');
+document.addEventListener('DOMContentLoaded', function(){
+  let x = 0,
+      y = 0;
+  document.addEventListener('keydown', function(event){
+    if(event.key === 'ArrowDown'){
+      event.preventDefault();
+      x += 10;
+      div.style.top = `${x}px`;
+    } else if(event.key === 'ArrowUp') {
+      event.preventDefault();
+      x -= 10;
+      div.style.top = `${x}px`;
+    } else if(event.key === 'ArrowLeft') {
+      event.preventDefault();
+      y -= 10;
+      div.style.left = `${y}px`;
+    } else if(event.key === 'ArrowRight') {
+      event.preventDefault();
+      y += 10;
+      div.style.left = `${y}px`;
+    }
+  });
+});
