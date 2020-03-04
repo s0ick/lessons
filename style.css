@@ -1,3 +1,6 @@
+input, button {
+  outline: none;
+}
 .back {
   background-image: linear-gradient(-50deg,#2f647a, #1d1c14);
   height: 100vh;
@@ -28,4 +31,73 @@
 }
 .italic {
   font-style: italic;
+}
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  padding-left: 57px;
+  color: #fff;
+}
+.form-block {
+  display: flex;
+  flex-direction: column;
+}:nth-child(1){
+  align-items: flex-end;
+}:nth-child(2){
+  align-items: flex-start;
+}
+
+.form-swipe-button {
+  cursor: pointer;
+}
+.form-swipe-button, img {
+  width: 50px;
+}
+
+.form_text {
+  width: 450px;
+  height: 55px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  color: rgb(130, 218, 253);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: rgba(0, 0 ,0, .3);
+  border: 1px solid #305a66;
+  font-size: 16px;
+}
+.form_lang {
+  color: rgb(130, 218, 253);
+  font-family: Roboto;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border: 1px solid #305a66;
+  padding: 15px 8px;
+  width: 120px;
+  text-align: center;
+  cursor: default;
+}
+.form_button {
+  width: 100px;
+  height: 30px;
+}
+.form_button {
+  background-color: rgba(130, 218, 253, .3);
+  color: rgb(130, 218, 253);
+  border: none;
+  border-radius: 10px;
+  transition: .2s;
+  width: 140px;
+  height: 40px;
+  font-family: Roboto;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.form_button:hover {
+  background-color: rgba(130, 218, 253, 0);
+  border: 1px solid #305a66;
+  cursor: pointer;
 }
